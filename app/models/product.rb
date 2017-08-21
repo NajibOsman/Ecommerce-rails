@@ -3,4 +3,5 @@ class Product < ApplicationRecord
   validates :price, presence: true,
     numericality: true,
     format: { :with => /\A\d{1,4}(\.\d{0,2})?\z/ }
+  has_many :order_item
 end
