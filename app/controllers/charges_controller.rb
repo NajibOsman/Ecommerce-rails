@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
   end
   def create
     # Amount in cents
-    @amount = current_order.total_price.to_i
+    @amount = current_order.total.to_i
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
